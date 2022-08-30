@@ -54,24 +54,37 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              onPressed: () {
-                Workmanager().registerOneOffTask(
+              onPressed: () async {
+                await Workmanager().registerOneOffTask(
                   "task1",
                   "OneOffTask",
                   tag: "1",
                   existingWorkPolicy: ExistingWorkPolicy.replace,
-                  initialDelay: Duration(seconds: 3),
+                  initialDelay: const Duration(seconds: 3),
                   constraints: Constraints(networkType: NetworkType.connected),
                   backoffPolicy: BackoffPolicy.linear,
-                  backoffPolicyDelay: Duration(seconds: 10),
+                  backoffPolicyDelay: const Duration(seconds: 10),
                   inputData: {"data": 1},
                 );
               },
-              child: Text("start a oneoff task"),
+              child: const Text("Start a OneOff Task"),
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: Text("start a preodic task"),
+              onPressed: () async {
+                await Workmanager().registerPeriodicTask(
+                  "task2",
+                  "PeriodicTask",
+                  tag: "2",
+                  frequency: const Duration(minutes: 15),
+                  existingWorkPolicy: ExistingWorkPolicy.replace,
+                  initialDelay: const Duration(seconds: 3),
+                  constraints: Constraints(networkType: NetworkType.connected),
+                  backoffPolicy: BackoffPolicy.linear,
+                  backoffPolicyDelay: const Duration(seconds: 10),
+                  inputData: {"data": 2},
+                );
+              },
+              child: const Text("Start a Periodic Task"),
             ),
           ],
         ),

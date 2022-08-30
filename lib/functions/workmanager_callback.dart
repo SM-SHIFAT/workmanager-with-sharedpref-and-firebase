@@ -22,7 +22,7 @@ void callbackDispatcher() async {
 
       await prefs.setInt('value', 100);
       final int? value = prefs.getInt('value');
-      print(value);
+      print("SharedPreferences value = $value");
 
       //Firebase
       final dataFromFirebase = await readsingleFirebaseData();
