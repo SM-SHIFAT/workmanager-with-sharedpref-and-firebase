@@ -1,16 +1,12 @@
-# workmanager_example
+# Workmanager with SharedPreferences and Firebase
 
-A new Flutter project.
+This Flutter project show example of how to initialize and access SharedPreferences and Firebase while executing Workmanager.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- First complete Firebase initialization.
+- Set plugins in pubspec.yaml file and cal ```flutter pub get```
+- Then while calling ensure that flutter is initialized before task execution start.
+- Then register plugins that we are gonna use in workmanager.
+- That's it. Good Luck :sparkles:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
