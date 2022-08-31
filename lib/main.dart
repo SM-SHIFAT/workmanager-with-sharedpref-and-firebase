@@ -86,6 +86,13 @@ class _HomePageState extends State<HomePage> {
               },
               child: const Text("Start a Periodic Task"),
             ),
+            ElevatedButton(
+              onPressed: () async {
+                await Workmanager().cancelByTag("2");
+                //await Workmanager().cancelByUniqueName("task2");
+              },
+              child: const Text("Cancel Task by Tag/Name"),
+            ),
           ],
         ),
       ),

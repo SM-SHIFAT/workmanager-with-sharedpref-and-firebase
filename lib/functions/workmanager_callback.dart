@@ -22,12 +22,6 @@ void callbackDispatcher() async {
       SharedPreferencesAndroid.registerWith(); //For Android devices
     } else if (Platform.isIOS) {
       SharedPreferencesIOS.registerWith(); //For IOS devices
-    } else if (Platform.isMacOS) {
-      SharedPreferencesMacOS.registerWith(); //For macos devices
-    } else if (Platform.isLinux) {
-      SharedPreferencesLinux.registerWith(); //For linux devices
-    } else if (Platform.isWindows) {
-      SharedPreferencesWindows.registerWith(); //For windows devices
     }
 
     await Firebase.initializeApp();
