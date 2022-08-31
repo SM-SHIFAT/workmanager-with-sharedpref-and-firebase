@@ -2,9 +2,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'dart:io' show Platform;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:workmanager/workmanager.dart';
-import 'package:shared_preferences_android/shared_preferences_android.dart';
+import 'package:shared_preferences_android/shared_preferences_android.dart'; //For Android devices
+import 'package:shared_preferences_ios/shared_preferences_ios.dart'; //For IOS devices
+import 'package:shared_preferences_macos/shared_preferences_macos.dart'; //For macos devices
+import 'package:shared_preferences_linux/shared_preferences_linux.dart'; //For linux devices
+import 'package:shared_preferences_windows/shared_preferences_windows.dart'; //For windows devices
 
 import '../model/firebase_model.dart';
 
@@ -13,7 +18,18 @@ import '../model/firebase_model.dart';
 void callbackDispatcher() async {
   WidgetsFlutterBinding.ensureInitialized();
   Workmanager().executeTask((task, inputData) async {
-    SharedPreferencesAndroid.registerWith();
+    if (Platform.isAndroid) {
+      SharedPreferencesAndroid.registerWith(); //For Android devices
+    } else if (Platform.isIOS) {
+      SharedPreferencesIOS.registerWith(); //For IOS devices
+    } else if (Platform.isMacOS) {
+      SharedPreferencesMacOS.registerWith(); //For macos devices
+    } else if (Platform.isLinux) {
+      SharedPreferencesLinux.registerWith(); //For linux devices
+    } else if (Platform.isWindows) {
+      SharedPreferencesWindows.registerWith(); //For windows devices
+    }
+
     await Firebase.initializeApp();
 
     try {
