@@ -10,3 +10,7 @@ This Flutter project show example of how to initialize and access SharedPreferen
 - Then register plugins that we are gonna use in workmanager.
 - That's it. Good Luck :sparkles:
 
+Medium Article: https://medium.com/@mahfuzrahman129_92323/access-sharedpreferences-and-firebase-with-workmanager-background-task-ef7e022ac775
+
+Video Tutorial: https://youtu.be/NIMlJ1c_3HU
+
