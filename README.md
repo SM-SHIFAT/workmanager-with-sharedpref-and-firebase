@@ -1,16 +1,11 @@
-# workmanager_example
+# Workmanager example with sharedpref and firebase
 
-A new Flutter project.
+Fetch stored data from Firebase and Sharedpreferences in background task. We will use Workmanager for scheduling a background task in Flutter. 
+Fetch Sharedpreferences and Firebase  In Workmager background task.
+
+- Check out Medium written article: https://medium.com/@mahfuzrahman129_92323/access-sharedpreferences-and-firebase-with-workmanager-background-task-ef7e022ac775
+- Tutorial Video: https://www.youtube.com/watch?v=NIMlJ1c_3HU
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Flutter Version: 2.10.3
